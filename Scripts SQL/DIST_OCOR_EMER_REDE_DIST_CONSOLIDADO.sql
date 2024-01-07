@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS DIST_OCOR_EMER_REDE_DIST_CONSOLIDADO;
+
+CREATE TABLE DIST_OCOR_EMER_REDE_DIST_CONSOLIDADO AS
+SELECT NomAgente,NumCPFCNPJ,NumOcorrencia,NumConjunto,DthInicioOcorrenciaAberta,DscCanalAtendimento,DthFimOcorrenciaAberta,DscOcorrenciaAberta,DscNumInterrupcao,MdaPreparo,MdaDeslocamento,MdaExecucao,NumVeiculo,CodIBGE
+FROM(
+	(SELECT *
+		FROM(
+			SELECT NomAgente,NumCPFCNPJ,NumOcorrencia,NumConjunto,DthInicioOcorrenciaAberta,DscCanalAtendimento,DthFimOcorrenciaAberta,DscOcorrenciaAberta,DscNumInterrupcao,MdaPreparo,MdaDeslocamento,MdaExecucao,NumVeiculo,CodIBGE FROM DIST_OCOR_EMER_REDE_DIST_2017
+			UNION
+			SELECT NomAgente,NumCPFCNPJ,NumOcorrencia,NumConjunto,DthInicioOcorrenciaAberta,DscCanalAtendimento,DthFimOcorrenciaAberta,DscOcorrenciaAberta,DscNumInterrupcao,MdaPreparo,MdaDeslocamento,MdaExecucao,NumVeiculo,CodIBGE FROM DIST_OCOR_EMER_REDE_DIST_2018
+			UNION
+			SELECT NomAgente,NumCPFCNPJ,NumOcorrencia,NumConjunto,DthInicioOcorrenciaAberta,DscCanalAtendimento,DthFimOcorrenciaAberta,DscOcorrenciaAberta,DscNumInterrupcao,MdaPreparo,MdaDeslocamento,MdaExecucao,NumVeiculo,CodIBGE FROM DIST_OCOR_EMER_REDE_DIST_2019
+			UNION
+			SELECT NomAgente,NumCPFCNPJ,NumOcorrencia,NumConjunto,DthInicioOcorrenciaAberta,DscCanalAtendimento,DthFimOcorrenciaAberta,DscOcorrenciaAberta,DscNumInterrupcao,MdaPreparo,MdaDeslocamento,MdaExecucao,NumVeiculo,CodIBGE FROM DIST_OCOR_EMER_REDE_DIST_2020
+			UNION
+			SELECT NomAgente,NumCPFCNPJ,NumOcorrencia,NumConjunto,DthInicioOcorrenciaAberta,DscCanalAtendimento,DthFimOcorrenciaAberta,DscOcorrenciaAberta,DscNumInterrupcao,MdaPreparo,MdaDeslocamento,MdaExecucao,NumVeiculo,CodIBGE FROM DIST_OCOR_EMER_REDE_DIST_2021)))
+		
